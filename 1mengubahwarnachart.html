@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 1: Mengubah Warna Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="myChart1" width="400" height="200"></canvas>
+    <script>
+        const ctx1 = document.getElementById('myChart1').getContext('2d');
+        const myChart1 = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['Point 1', 'Point 2', 'Point 3', 'Point 4', 'Point 5'],
+                datasets: [{
+                    label: 'Dataset 1',
+                    data: [1, 2, 3, 4, 5],
+                    borderColor: 'red', // Warna garis merah
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
